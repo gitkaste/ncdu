@@ -3,6 +3,7 @@ bin_PROGRAMS=ncdu
 
 ncdu_SOURCES=\
 	src/browser.c\
+	src/clear.c\
 	src/delete.c\
 	src/dirlist.c\
 	src/dir_common.c\
@@ -20,6 +21,7 @@ noinst_HEADERS=\
 	deps/yopt.h\
 	deps/khash.h\
 	src/browser.h\
+	src/clear.h\
 	src/delete.h\
 	src/dir.h\
 	src/dirlist.h\

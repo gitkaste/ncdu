@@ -54,6 +54,7 @@ static void screen_draw() {
     case ST_BROWSE: browse_draw(); break;
     case ST_HELP:   help_draw();   break;
     case ST_DEL:    delete_draw(); break;
+    case ST_CLEAR:  clear_draw(); break;
   }
 }
 
@@ -97,6 +98,7 @@ int input_handle(int wait) {
       case ST_BROWSE: return browse_key(ch);
       case ST_HELP:   return help_key(ch);
       case ST_DEL:    return delete_key(ch);
+      case ST_CLEAR:  return clear_key(ch);
     }
     screen_draw();
   }
@@ -279,6 +281,8 @@ int main(int argc, char **argv) {
       }
     } else if(pstate == ST_DEL)
       delete_process();
+    else if(pstate == ST_CLEAR)
+      clear_process();
     else if(input_handle(0))
       break;
   }
