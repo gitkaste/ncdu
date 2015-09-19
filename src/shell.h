@@ -1,39 +1,7 @@
-ncdu 1.11g
-==========
-
-DESCRIPTION
-
-  ncdu (NCurses Disk Usage) is a curses-based version of
-  the well-known 'du', and provides a fast way to see what
-  directories are using your disk space.
-
-
-REQUIREMENTS
-
-  In order to compile and install ncdu, you need to have
-  at least...
-
-  - a POSIX-compliant operating system (Linux, BSD, etc)
-  - curses libraries and header files
-
-
-INSTALL
-
-  The usual:
-
-    ./configure --prefix=/usr
-    make
-    make install
-
-  If you're building directly from the git repository, make sure you have perl
-  (or rather, pod2man), pkg-config and GNU autoconf/automake installed, then
-  run 'autoreconf -i', and you're ready to continue with the usual ./configure
-  and make route.
-
-
-COPYING
+/* ncdu - NCurses Disk Usage
 
   Copyright (c) 2007-2014 Yoran Heling
+  Shell support: Copyright (c) 2014 Thomas Jarosch
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -53,3 +21,15 @@ COPYING
   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+#ifndef _shell_h
+#define _shell_h
+
+#include "global.h"
+
+void shell_draw(void);
+void shell_init();
+
+#endif

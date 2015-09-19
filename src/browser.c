@@ -370,6 +370,7 @@ int browse_key(int ch) {
       info_show = 0;
       break;
     case KEY_LEFT:
+    case KEY_BACKSPACE:
     case 'h':
     case '<':
       if(dirlist_par && dirlist_par->parent != NULL) {
@@ -427,6 +428,13 @@ int browse_key(int ch) {
         if((t = dirlist_get(-1)) == sel || t == dirlist_parent)
           t = NULL;
       delete_init(sel, t);
+      break;
+     case 'b':
+      if(dir_import_active) {
+        message = "Shell feature not available for imported directories.";
+        break;
+      }
+      shell_init();
       break;
     }
 

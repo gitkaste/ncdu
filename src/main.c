@@ -32,7 +32,6 @@
 
 #include <unistd.h>
 #include <sys/time.h>
-#include <locale.h>
 
 #include <yopt.h>
 
@@ -53,6 +52,7 @@ static void screen_draw() {
     case ST_CALC:   dir_draw();    break;
     case ST_BROWSE: browse_draw(); break;
     case ST_HELP:   help_draw();   break;
+    case ST_SHELL:  shell_draw();  break;
     case ST_DEL:    delete_draw(); break;
   }
 }
@@ -255,7 +255,6 @@ static void init_nc() {
 
 /* main program */
 int main(int argc, char **argv) {
-  setlocale(LC_ALL, "");
   read_locale();
   argv_parse(argc, argv);
 
